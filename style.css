@@ -18,6 +18,15 @@ ul
   list-style-type: none;
   }
   
+#snakebox
+  {
+  float: center;
+  width: 55%;
+  margin: 5% auto;
+  padding: 20px;
+  text-align: center;
+} 
+
 #textbox
   {
   float: center;
