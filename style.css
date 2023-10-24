@@ -28,8 +28,8 @@ ul
 #textbox
   {
   float: center;
-  width: 55%;
-  margin: 5% auto;
+  width: 70%;
+  margin: 5% 20%;
   padding: 20px;
   background-color: #7aa5f0;
   text-align: center;
@@ -40,10 +40,11 @@ ul
 #navigation
 {
 	
-  margin: 5% 0%;
+  margin: 9% 0%;
   float: left;
   width: 8%;
   padding: 20px;
+  line-height: 2;
   background-color: #7aa5f0;
   text-align: left;
   border: 3px solid black;
