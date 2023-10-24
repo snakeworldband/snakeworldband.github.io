@@ -17,36 +17,29 @@ ul
   {
   list-style-type: none;
   }
-  
 #snakebox
-  {
-  float: center;
-  width: 100%;
-  text-align: center;
-} 
+{
+	float: center;
+}
 
 #textbox
   {
+	margin: 0 10%;
   float: center;
-  width: 70%;
-  margin: 5% 20%;
-  padding: 20px;
   background-color: #7aa5f0;
   text-align: center;
   border: 3px solid black;
   border-radius: 25px;
+  
+  padding: 20px;
 } 
 
 #navigation
 {
-	
-  margin: 9% 0%;
   float: left;
-  width: 8%;
-  padding: 20px;
-  line-height: 2;
-  background-color: #7aa5f0;
+  background-color: #fcc2ff;
   text-align: left;
   border: 3px solid black;
   border-radius: 25px;
+  padding: 20px;
 }
