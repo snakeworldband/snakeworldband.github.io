@@ -22,8 +22,6 @@ ul
   {
   float: center;
   width: 55%;
-  margin: 5% auto;
-  padding: 20px;
   text-align: center;
 } 
 
@@ -44,7 +42,7 @@ ul
 	
   margin: 5% 0%;
   float: left;
-  width: 13%;
+  width: 8%;
   padding: 20px;
   background-color: #7aa5f0;
   text-align: left;
