@@ -11,10 +11,10 @@
 <script type="text/bitsyGameData" id="exportedGameData">
 snakeworld!
 
-# BITSY VERSION 8.7
+# BITSY VERSION 8.9
 
 ! VER_MAJ 8
-! VER_MIN 7
+! VER_MIN 9
 ! ROOM_FORMAT 1
 ! DLG_COMPAT 0
 ! TXT_MODE 0
@@ -185,7 +185,7 @@ SPR A
 00111000
 01101100
 00000000
-POS 0 5,5
+POS 0 6,6
 ITM 0 1
 ITM 2 1
 ITM 3 1
@@ -252,7 +252,7 @@ SPR c
 10011111
 00010101
 00010100
-NAME raine
+NAME rhyme
 DLG 5
 POS 1 10,9
 
@@ -374,7 +374,7 @@ NAME snake2 dialog
 
 DLG 5
 """
-woof woof! (hi im raine im the guitarist and co vocalist)
+woof woof! (hi im rhyme im the guitarist and co vocalist)
 bark bark! (also im a dog lol)
 ...
 ...
@@ -1505,7 +1505,7 @@ function BitsySystem(name) {
 			count--;
 		}
 
-		if (memory.blocks[next] != undefined) {
+		if (count == 0) {
 			// couldn't find any available block
 			return null;
 		}
@@ -1711,6 +1711,15 @@ function BitsySystem(name) {
 		self._free(tile);
 	};
 
+	this.deleteAllTiles = function() {
+		if (tilePoolStart != null) {
+			for (var i = 0; i < tilePoolSize; i++) {
+				var tile = tilePoolStart + i;
+				this.delete(tile);
+			}
+		}
+	};
+
 	this.fill = function(block, value) {
 		var len = memory.blocks[block].length;
 		for (var i = 0; i < len; i++) {
@@ -1827,7 +1836,7 @@ var bitsy = mainProcess.system;
 // is this the right place for this to live?
 var version = {
 	major: 8, // major changes
-	minor: 7, // smaller changes
+	minor: 9, // smaller changes
 	devBuildPhase: "RELEASE",
 };
 function getEngineVersion() {
@@ -8060,12 +8069,7 @@ this.GetFrameCount = function(drawingId) {
 // todo : forceReset option is hacky?
 this.ClearCache = function(forceReset) {
 	if (forceReset === undefined || forceReset === true) {
-		for (var cacheId in drawingCache.render) {
-			var tiles = drawingCache.render[cacheId];
-			for (var i = 0; i < tiles.length; i++) {
-				bitsy.delete(tiles[i]);
-			}
-		}
+		bitsy.deleteAllTiles();
 	}
 
 	drawingCache.render = {};
